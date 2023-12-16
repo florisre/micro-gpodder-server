@@ -4,10 +4,10 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
- # volumes:
-    #   - type: bind
-    #   source: ~/docker_files/gpodder/data.sqlite
-    #   target: /var/www/html/data.sqlite:Z         # `:Z`` is important
+  volumes:
+       - type: bind
+       source: ~/docker_files/gpodder/data.sqlite
+       target: /var/www/html/data.sqlite:Z         # `:Z`` is important
     hostname: alpine-docker
     ports:
       - 80:80
