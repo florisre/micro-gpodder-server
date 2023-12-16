@@ -1,0 +1,13 @@
+services:
+  gpodder:
+    container_name: gPodder
+    build:
+      context: ./micro-gpodder-server
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ~/docker_files/gpodder/data.sqlite
+        target: /var/www/html/data.sqlite:Z         # `:Z`` is important
+    hostname: alpine-docker
+    ports:
+      - 80:80
