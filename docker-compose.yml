@@ -2,7 +2,7 @@ services:
   gpodder:
     container_name: gPodder
     build:
-      context: ./micro-gpodder-server
+      context: ./
       dockerfile: Dockerfile
     volumes:
       - type: bind
